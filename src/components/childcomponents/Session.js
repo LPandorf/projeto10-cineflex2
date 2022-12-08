@@ -29,7 +29,8 @@ const Weekday=styled.div`
     letter-spacing: 0.02em;
     color: #293845;
     width: 100%;
-    margin: 23px;
+    margin-bottom: 40px;
+    margin-left: 10px;
 `
 const Time = styled.div`
     display: flex;
