@@ -29,7 +29,7 @@ const Weekday=styled.div`
     letter-spacing: 0.02em;
     color: #293845;
     width: 100%;
-    margin-bottom: 40px;
+    margin-top: 23px;
     margin-left: 10px;
 `
 const Time = styled.div`
@@ -49,4 +49,7 @@ const Button = styled.div`
     line-height: 21px;
     letter-spacing: 0.02em;
     color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
