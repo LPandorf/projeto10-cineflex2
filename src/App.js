@@ -25,5 +25,5 @@ export default function App() {
 }
 
 const Wrapper = styled.div`
-  margin-top: 67px;
+  margin-top: 47px;
 `;
