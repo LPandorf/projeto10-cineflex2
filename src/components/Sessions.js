@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import {URL} from "../Constants";
 import Session from "./childcomponents/Session";
+import Footer from "./childcomponents/Footer";
 
 export default function Sessions(){
     const {idFilme}= useParams();
@@ -29,6 +30,7 @@ export default function Sessions(){
                     <Session movie={m} key={m.id} />
                 ))}
             </Times>
+            <Footer/>
         </>
     )
 }
