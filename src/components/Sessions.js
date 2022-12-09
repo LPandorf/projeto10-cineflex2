@@ -14,7 +14,7 @@ export default function Sessions(){
         const promise=axios.get(`${URL}/movies/${idFilme}/showtimes`);
         promise.then(res=>setMovie(res.data));
         promise.catch(err=>console.log(err.response.data));
-    })
+    }, [])
 
     if(!movie){
         return (
@@ -64,4 +64,5 @@ const Times=styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px;
+    margin-bottom: 150px;
 `;
