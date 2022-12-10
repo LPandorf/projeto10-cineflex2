@@ -76,6 +76,6 @@ const Page= styled.div`
 const Chair= styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin:24px;
+    margin: 19px;
     justify-content: center;
 `

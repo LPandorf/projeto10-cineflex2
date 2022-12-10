@@ -17,7 +17,7 @@ const Wrapper= styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 6px;
+    margin: 5px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;

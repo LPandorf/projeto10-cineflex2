@@ -48,6 +48,7 @@ const CircleSelected= styled.div`
     background: #1AAE9E;
     border: 1px solid #0E7D71;
     border-radius: 17px;
+    margin: 5px;
 `
 
 const Availeble= styled.div`
@@ -63,6 +64,7 @@ const CircleAvaileble= styled.div`
     background: #C3CFD9;
     border: 1px solid #7B8B99;
     border-radius: 17px;
+    margin: 5px;
 `
 
 const Unavaileble= styled.div`
@@ -78,4 +80,5 @@ const CircleUnavaileble= styled.div`
     background: #FBE192;
     border: 1px solid #F7C52B;
     border-radius: 17px;
+    margin: 5px;
 `
