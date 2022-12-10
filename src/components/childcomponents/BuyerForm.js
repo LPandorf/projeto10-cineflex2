@@ -2,6 +2,6 @@
 
 export default function BuyerForm(){
     return (
-        <div>jdbsjfg</div>
+        <div>Formulario do comprador</div>
     )
 }

@@ -6,6 +6,7 @@ import Footer from "./childcomponents/Footer";
 import { URL } from "../Constants";
 import Seat from "./childcomponents/Seat";
 import BuyerForm from "./childcomponents/BuyerForm";
+import Example from "./childcomponents/Example";
 
 export default function Seats(){
     const {idSessao}= useParams();
@@ -22,21 +23,21 @@ export default function Seats(){
             <Loading>Carregando ...</Loading>
         );
     }/* 
-{session.seats.map(seat=>(
-                        <Seat 
-                            key={seat.id}
-                            seat={seat}
-                            
-                        />
-                    ))} */
+*/
     return(
         <>  
             <Title>Selecione o(s) assento(s)</Title>
             <Page>
                 <Chair>
-                    vjmnv
+                    {session.seats.map(s=>(
+                        <Seat 
+                            key={s.id}
+                            seat={s}
+                            
+                        />
+                    ))} 
                 </Chair>
-                jbjb
+                <Example/>
                 <BuyerForm/>
             </Page>
             <Footer/>
@@ -73,5 +74,8 @@ const Page= styled.div`
 `
 
 const Chair= styled.div`
-    color: red;
+    display: flex;
+    flex-wrap: wrap;
+    margin:24px;
+    justify-content: center;
 `
