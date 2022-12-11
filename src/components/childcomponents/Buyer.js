@@ -32,7 +32,7 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
             seats: selectedChair.map(s=>s.name)
         };
 
-        const promise=axios.post(`${URL}/seats/bookmany`, body);
+        const promise=axios.post(`${URL}/seats/book-many`, body);
         promise.then(res=>{
             setSuccessInfo(info);
             setselectedChair([]);
