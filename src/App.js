@@ -5,8 +5,10 @@ import Home from "./components/Home";
 import Sessions from "./components/Sessions";
 import Seats from "./components/Seats";
 import Success from "./components/Success";
+import { useState } from "react";
 
 export default function App() {
+  const [successInfo,setSuccessInfo]=useState({});
   return (
     <>
       <Navbar />
@@ -15,8 +17,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/sessoes/:idFilme" element={<Sessions/>} />
-            <Route path="/assentos/:idSessao" element={<Seats/>} />
-            <Route path="/sucesso" element={<Success/>} />
+            <Route path="/assentos/:idSessao" element={<Seats setSuccessInfo={setSuccessInfo} />} />
+            <Route path="/sucesso" element={<Success successInfo={successInfo} />} />
           </Routes>
         </BrowserRouter>
       </Wrapper>

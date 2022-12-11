@@ -5,12 +5,13 @@ import axios from "axios";
 import Footer from "./childcomponents/Footer";
 import { URL } from "../Constants";
 import Seat from "./childcomponents/Seat";
-import BuyerForm from "./childcomponents/BuyerForm";
+import Buyer from "./childcomponents/Buyer";
 import Example from "./childcomponents/Example";
 
-export default function Seats(){
+export default function Seats({setSuccessInfo}){
     const {idSessao}= useParams();
     const [session,setSession] = useState(undefined);
+    const [selectedChair, setSelectedChair]= useState([]);
 
     useEffect(()=>{
         const promise=axios.get(`${URL}/showtimes/${idSessao}/seats`);
@@ -22,23 +23,43 @@ export default function Seats(){
         return (
             <Loading>Carregando ...</Loading>
         );
-    }/* 
-*/
+    }
+
+    function chair(seat){
+        if(seat.isAvailable===false){
+            alert("Esse assento não está disponível")
+        }else{
+            const isSelected=selectedChair.some(s=>seat.id===s.id);
+            if(isSelected){
+                const newList=selectedChair.filter(s=>seat.id!==s.id);
+                setSelectedChair(newList);
+            }else{
+                setSelectedChair([...selectedChair, seat]);
+            }
+        }
+    }
+
     return(
         <>  
             <Title>Selecione o(s) assento(s)</Title>
             <Page>
-                <Chair>
-                    {session.seats.map(s=>(
+                <Chairs>
+                    {session.seats.map(seat=>(
                         <Seat 
-                            key={s.id}
-                            seat={s}
-                            
+                            key={seat.id}
+                            seat={seat}
+                            chair={chair}
+                            isSelected={selectedChair.some(s=> seat.id===s.id)}
                         />
                     ))} 
-                </Chair>
+                </Chairs>
                 <Example/>
-                <BuyerForm/>
+                <Buyer
+                    session={session}
+                    selectedChair={selectedChair}
+                    setselectedChair={setSelectedChair}
+                    setSuccessInfo={setSuccessInfo}
+                />
             </Page>
             <Footer/>
         </>
@@ -73,7 +94,7 @@ const Page= styled.div`
     margin-bottom: 150px;
 `
 
-const Chair= styled.div`
+const Chairs= styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 19px;
