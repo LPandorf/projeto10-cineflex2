@@ -17,14 +17,19 @@ export default function Seat({seat, isSelected, chair}){
                 setColor("#FBE192");
                 setBorder("#F7C52B");
             }
-        }
-    })
+        };
+    });
 
     return (
-        <Wrapper color={color} border={border} onClick={()=>chair(seat)} >
+        <Wrapper 
+            color={color} 
+            border={border} 
+            onClick={()=>chair(seat)} 
+            data-test="seat"
+        >
             {seat.name}
         </Wrapper>
-    )
+    );
 }
 
 const Wrapper= styled.div`
@@ -47,4 +52,4 @@ const Wrapper= styled.div`
     text-align: center;
     letter-spacing: 0.04em;
     color: #000000;
-`
+`;

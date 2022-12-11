@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Movie({posterURL}){
     return (
         <Poster>
-            <Image src={posterURL}/>
+            <Image src={posterURL} data-test="movie"/>
         </Poster>
     );
 }
@@ -18,8 +18,8 @@ const Poster= styled.div`
     align-items: center;
     justify-content: center;
     margin: 10px;
-`
+`;
 const Image= styled.img`
     width: 129px;
     height: 193px;
-`
+`;

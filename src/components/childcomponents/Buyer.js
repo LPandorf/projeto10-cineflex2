@@ -11,9 +11,11 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
     function forms(e){
         const {name,value}=e.target;
         setForm({...form, [name]:value});
-    }
+    };
 
     function buy(e){
+        console.log(info);
+
         e.preventDefault();
 
         const body={
@@ -28,16 +30,17 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
             buyer: form.name,
             cpf: form.cpf,
             seats: selectedChair.map(s=>s.name)
-        }
+        };
 
         const promise=axios.post(`${URL}/seats/bookmany`, body);
         promise.then(res=>{
-            setSuccessInfo(info)
-            setselectedChair([])
-            navigate("/sucesso")
+            setSuccessInfo(info);
+            setselectedChair([]);
+            navigate("/sucesso");
+            console.log(info);
         });
         promise.catch(err=>alert(err.response.data));
-    }
+    };
     
     return (
         <Form onSubmit={buy}>
@@ -48,6 +51,7 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
                 value={form.name}
                 onChange={forms}
                 type="text"
+                data-test="client-name"
             />
             CPF do comprador:
             <input 
@@ -56,10 +60,11 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
                 value={form.cpf}
                 onChange={forms}
                 type="number"
+                data-test="client-cpf"
             />
-            <button type="submit">Reservar Assento(s)</button>
+            <button type="submit" data-test="book-seat-btn">Reservar Assento(s)</button>
         </Form>
-    )
+    );
 }
 
 const Form= styled.div`
@@ -109,4 +114,4 @@ const Form= styled.div`
         margin-top: 3px;
         margin-bottom: 10px;
     }
-`
+`;

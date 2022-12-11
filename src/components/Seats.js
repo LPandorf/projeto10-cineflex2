@@ -17,13 +17,13 @@ export default function Seats({setSuccessInfo}){
         const promise=axios.get(`${URL}/showtimes/${idSessao}/seats`);
         promise.then(res=>setSession(res.data));
         promise.catch(err=>console.log(err.response.data));
-    },[])
+    },[]);
 
     if(!session){
         return (
             <Loading>Carregando ...</Loading>
         );
-    }
+    };
 
     function chair(seat){
         if(seat.isAvailable===false){
@@ -36,8 +36,8 @@ export default function Seats({setSuccessInfo}){
             }else{
                 setSelectedChair([...selectedChair, seat]);
             }
-        }
-    }
+        };
+    };
 
     return(
         <>  
@@ -68,7 +68,7 @@ export default function Seats({setSuccessInfo}){
                 hour={session.name}
             />
         </>
-    )
+    );
 }
 
 const Loading= styled.div`
@@ -97,11 +97,11 @@ const Title= styled.div`
 
 const Page= styled.div`
     margin-bottom: 150px;
-`
+`;
 
 const Chairs= styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 19px;
     justify-content: center;
-`
+`;

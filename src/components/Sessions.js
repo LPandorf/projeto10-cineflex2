@@ -14,13 +14,13 @@ export default function Sessions(){
         const promise=axios.get(`${URL}/movies/${idFilme}/showtimes`);
         promise.then(res=>setMovie(res.data));
         promise.catch(err=>console.log(err.response.data));
-    }, [])
+    }, []);
 
     if(!movie){
         return (
             <Loading>Carregando ...</Loading>
         );
-    }
+    };
 
     return (
         <>
@@ -32,7 +32,7 @@ export default function Sessions(){
             </Times>
             <Footer poster={movie.posterURL} title={movie.title}/>
         </>
-    )
+    );
 }
 
 const Loading= styled.div`

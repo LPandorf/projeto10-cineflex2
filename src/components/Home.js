@@ -18,7 +18,7 @@ export default function Home(){
         return(
             <Loading>Carregando ...</Loading>
         );
-    }
+    };
     return (
         <>
             <Title>Selecione o filme</Title>

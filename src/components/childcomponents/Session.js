@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 export default function Session({movie}){
     return (
-        <Weekday>
+        <Weekday data-test="movie-day" >
             {movie.weekday} - {movie.date}
             <Time>
                 {movie.showtimes.map((t)=>(
                     <Link key={t.name} to={`/assentos/${t.id}`} >
-                        <Button>{t.name}</Button>
+                        <Button data-test="showtime">{t.name}</Button>
                     </Link>
                 ))}
             </Time>
@@ -31,10 +31,10 @@ const Weekday=styled.div`
     width: 100%;
     margin-top: 23px;
     margin-left: 10px;
-`
+`;
 const Time = styled.div`
     display: flex;
-`
+`;
 const Button = styled.div`
     width: 83px;
     height: 43px;
@@ -52,4 +52,4 @@ const Button = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`
+`;

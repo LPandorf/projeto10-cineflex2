@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Footer({poster, title, weekday, hour}){
     return(
-        <Wrapper>
+        <Wrapper data-test="footer" >
             <Poster>
                 <img src={poster} alt={poster}/>
             </Poster>
@@ -11,7 +11,7 @@ export default function Footer({poster, title, weekday, hour}){
                 {weekday && hour && <p>{weekday} - {hour}</p>}
             </Title>
         </Wrapper>
-    )
+    );
 }
 
 const Wrapper= styled.div`
@@ -29,7 +29,7 @@ const Wrapper= styled.div`
     display: flex;
     align-items: center;
     color: #293845;
-`
+`;
 
 const Poster=styled.div`
     margin-left: 20px;
@@ -45,7 +45,7 @@ const Poster=styled.div`
         width: 48px;
         height: 72px;
     }
-`
+`;
 
 const Title=styled.div`
     margin-left: 20px;
@@ -55,4 +55,4 @@ const Title=styled.div`
     font-size: 26px;
     line-height: 30px;
     color: #293845;
-`
+`;

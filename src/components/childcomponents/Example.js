@@ -16,7 +16,7 @@ export default function Example(){
                 Indisponível
             </Unavaileble>
         </Wrapper>
-    )
+    );
 }
 
 const Wrapper= styled.div`
@@ -33,14 +33,14 @@ const Wrapper= styled.div`
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-`
+`;
 
 const Selected= styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 const CircleSelected= styled.div`
     width: 25px;
@@ -49,14 +49,14 @@ const CircleSelected= styled.div`
     border: 1px solid #0E7D71;
     border-radius: 17px;
     margin: 5px;
-`
+`;
 
 const Availeble= styled.div`
 display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 const CircleAvaileble= styled.div`
     width: 24px;
@@ -65,14 +65,14 @@ const CircleAvaileble= styled.div`
     border: 1px solid #7B8B99;
     border-radius: 17px;
     margin: 5px;
-`
+`;
 
 const Unavaileble= styled.div`
 display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 const CircleUnavaileble= styled.div`
     width: 24px;
@@ -81,4 +81,4 @@ const CircleUnavaileble= styled.div`
     border: 1px solid #F7C52B;
     border-radius: 17px;
     margin: 5px;
-`
+`;
