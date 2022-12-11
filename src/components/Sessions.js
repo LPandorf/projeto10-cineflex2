@@ -30,7 +30,7 @@ export default function Sessions(){
                     <Session movie={m} key={m.id} />
                 ))}
             </Times>
-            <Footer/>
+            <Footer poster={movie.posterURL} title={movie.title}/>
         </>
     )
 }

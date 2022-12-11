@@ -61,7 +61,12 @@ export default function Seats({setSuccessInfo}){
                     setSuccessInfo={setSuccessInfo}
                 />
             </Page>
-            <Footer/>
+            <Footer 
+                title={session.movie.title}
+                poster={session.movie.posterURL}
+                weekday={session.day.weekday}
+                hour={session.name}
+            />
         </>
     )
 }
