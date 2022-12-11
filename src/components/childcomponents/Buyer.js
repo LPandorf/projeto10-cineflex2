@@ -32,9 +32,9 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
 
         const promise=axios.post(`${URL}/seats/bookmany`, body);
         promise.then(res=>{
-            setSuccessInfo(info);
-            setselectedChair([]);
-            navigate("/sucesso");
+            setSuccessInfo(info)
+            setselectedChair([])
+            navigate("/sucesso")
         });
         promise.catch(err=>alert(err.response.data));
     }
@@ -55,7 +55,7 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
                 name="cpf"
                 value={form.cpf}
                 onChange={forms}
-                type="text"
+                type="number"
             />
             <button type="submit">Reservar Assento(s)</button>
         </Form>
