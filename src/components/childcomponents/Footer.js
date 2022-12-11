@@ -19,7 +19,7 @@ const Wrapper= styled.div`
     width: 100%;
     height: 117px;
     background-color: #DFE6ED;
-    border: 1px solid #9EADBA;
+    border-top: 1px solid #9EADBA;
     position: fixed;
     font-family: 'Roboto';
     font-style: normal;
