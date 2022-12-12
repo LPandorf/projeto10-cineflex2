@@ -16,10 +16,10 @@ export default function Success({successInfo}){
             </InfoWrapper>
             <InfoWrapper data-test="seats-info" >
             <NameInfo>Ingressos</NameInfo>
-                <Info>{/* 
+                <Info>
                     {seats.map(s=>
                         <p key={s}>Assento {s}</p>   
-                    )} */}
+                    )} 
                 </Info>
             </InfoWrapper>
             <InfoWrapper data-test="client-info">

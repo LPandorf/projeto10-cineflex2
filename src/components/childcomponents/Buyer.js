@@ -14,7 +14,7 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
     };
 
     function buy(e){
-        console.log(info);
+        console.log("entrou no buy");
 
         e.preventDefault();
 
@@ -34,9 +34,10 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
 
         const promise=axios.post(`${URL}/seats/book-many`, body);
         promise.then(res=>{
+            navigate("/sucesso");
             setSuccessInfo(info);
             setselectedChair([]);
-            navigate("/sucesso");
+            
             console.log(info);
         });
         promise.catch(err=>alert(err.response.data));
@@ -62,7 +63,7 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
                 type="number"
                 data-test="client-cpf"
             />
-            <button type="submit" data-test="book-seat-btn">Reservar Assento(s)</button>
+            <button type="submit" data-test="book-seat-btn" onClick={buy}>Reservar Assento(s)</button>
         </Form>
     );
 }
