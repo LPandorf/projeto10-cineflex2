@@ -14,8 +14,6 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
     };
 
     function buy(e){
-        console.log("entrou no buy");
-
         e.preventDefault();
 
         const body={
@@ -37,8 +35,6 @@ export default function Buyer({session, selectedChair, setselectedChair, setSucc
             navigate("/sucesso");
             setSuccessInfo(info);
             setselectedChair([]);
-            
-            console.log(info);
         });
         promise.catch(err=>alert(err.response.data));
     };
@@ -96,7 +92,7 @@ const Form= styled.div`
         width: 225px;
         height: 42px;
         color: #FFFFFF;
-        margin-top: 50px;
+        margin-top: 20px;
     }
     input{
         box-sizing: border-box;

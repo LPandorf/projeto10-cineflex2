@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Form, useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 import Footer from "./childcomponents/Footer";
@@ -9,6 +9,7 @@ import Buyer from "./childcomponents/Buyer";
 import Example from "./childcomponents/Example";
 
 export default function Seats({setSuccessInfo}){
+    const {idFilme}= useParams();
     const {idSessao}= useParams();
     const [session,setSession] = useState(undefined);
     const [selectedChair, setSelectedChair]= useState([]);
@@ -61,6 +62,11 @@ export default function Seats({setSuccessInfo}){
                     setSuccessInfo={setSuccessInfo}
                 />
             </Page>
+            <Wrapper>
+                <Link to={"/"}>
+                    <button>voltar para home</button>
+                </Link>
+            </Wrapper>
             <Footer 
                 title={session.movie.title}
                 poster={session.movie.posterURL}
@@ -96,7 +102,7 @@ const Title= styled.div`
 `;
 
 const Page= styled.div`
-    margin-bottom: 150px;
+    margin-bottom: 40px;
 `;
 
 const Chairs= styled.div`
@@ -104,4 +110,30 @@ const Chairs= styled.div`
     flex-wrap: wrap;
     margin: 19px;
     justify-content: center;
+`;
+
+const Wrapper=styled.div`
+    margin-bottom: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.04em;
+        width: 225px;
+        height: 42px;
+        background: #C3CFD9;
+        border: 1px solid #E8833A;
+        border-radius: 3px;
+        color: #E8833A;
+        display: flex;
+        justify-content: center;
+    }
 `;
