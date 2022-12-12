@@ -33,7 +33,7 @@ export default function Sessions(){
             </Times>
             <Wrapper>
                 <Link to={"/"}>
-                    <button>voltar para home</button>
+                    <button data-test="go-home-header-btn">voltar para home</button>
                 </Link>
             </Wrapper>
             <Footer poster={movie.posterURL} title={movie.title}/>

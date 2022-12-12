@@ -64,7 +64,7 @@ export default function Seats({setSuccessInfo}){
             </Page>
             <Wrapper>
                 <Link to={"/"}>
-                    <button>voltar para home</button>
+                    <button data-test="go-home-header-btn">voltar para home</button>
                 </Link>
             </Wrapper>
             <Footer 
